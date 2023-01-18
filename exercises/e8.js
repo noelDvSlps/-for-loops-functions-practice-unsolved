@@ -6,7 +6,11 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-
+  let obj = {balance: 0};
+  for (let i = 0; i < array.length; i++) {
+    obj = parseFloat(obj.balance) >= parseFloat(array[i].balance) ? obj : array [i];
+  }
+  return [obj];
 }
 
 

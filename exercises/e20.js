@@ -6,7 +6,23 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+  const arrWith = [];
+  const arrWithout = [];
+  const arrBoth = [];
+  for (let i = 0; i < array.length; i++) {
+    let a = false;
+    for (let b = 0; b < array[i].length; b++) {
+      if (array[i][b] === "a") {
+        a = true;
+        break;
+      }
+    }
+    a === true ? arrWith.push(array[i]) : arrWithout.push(array[i]);
+  }
 
+  arrBoth.push(arrWith);
+  arrBoth.push(arrWithout);
+  return arrBoth;
 }
 
 

@@ -5,6 +5,23 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
+  let obj = {balance:0};
+  for (let i = 0; i < array.length; i++) {
+    obj =
+      obj.balance < array[i].balance
+        ? parseFloat(obj.balance) === 0
+          ? parseFloat(array[i].balance) === 0
+            ? {balance:0}
+            : array[i]
+          : obj
+        : parseFloat(array[i].balance) === 0
+        ? parseFloat(obj.balance) === 0
+          ? {balance:0}
+          : obj
+        : array[i];
+  }
+
+  return [obj];
 
 }
 
